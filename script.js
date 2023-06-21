@@ -46,6 +46,23 @@ function sortTasks(){
     $('#ulTasks .done').appendTo(ulTasks)
 }
 
+function toggleInputButtons(valIsEmpty){
+    if(!valIsEmpty){
+        btnReset.prop('disabled', false)
+        btnAdd.prop('disabled', false)
+    }
+    else{
+        btnReset.prop('disabled',true)
+        btnAdd.prop('disabled',true)
+    }
+}
+
+
+
+inpNewTask.on('input',()=>{
+    //if there is no text in task input area then the add and reset buttons are disabled by default in html code but as someone enters the text the button should be enabled
+    toggleInputButtons(inpNewTask.val() == '')
+})
 
 btnAdd.click(()=>{
     addItem()
@@ -53,7 +70,9 @@ btnAdd.click(()=>{
 
 btnReset.click(()=>{
     //clearing the text area for the task input box
-    inpNewTask.val("")
+    inpNewTask.val('')
+    //whenever the text area is cleaned using reset button then the add and reset button must become non clickable
+    toggleInputButtons(true)
 })
 
 btnCleanup.click(()=>{
