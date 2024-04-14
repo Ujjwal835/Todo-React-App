@@ -1,0 +1,25 @@
+.done {
+    color: #6c757d;
+    text-decoration: line-through;
+}
+
+.todoContainer {
+    height: 100vh;
+    min-height: 100vh;
+    background: linear-gradient(180.3deg, rgb(221, 221, 221) 5.5%, rgb(110, 136, 161) 90.2%);
+
+}
+
+input {
+    width: 100%;
+}
+
+
+.kg-row {
+    margin: 10px 5px;
+
+}
+
+.kg-button {
+    min-width: 80px;
+}
